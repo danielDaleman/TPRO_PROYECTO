@@ -17,7 +17,7 @@ public class EjercicioTpro {
     //Matriz de operaciones
     private static char[][] matriz = {  {'b', 'b', 'a'}, 
                                         {'c', 'b', 'a'}, 
-                                        {'a', 'c', 'c'} };
+                                        {'a', 'c', 'c'}};
     
     //Alfabeto de caracteres
     private static char[] alfabeto = {'a','b','c'};
@@ -28,7 +28,7 @@ public class EjercicioTpro {
     
     public static boolean ejercicio(List<Character> xh){    
         /**Scanner teclado=new Scanner(System.in);
-        String cadena =teclado.next();**/                
+        String cadena =teclado.next();**/                    
         boolean dato;        
         dato = paren('a',xh);
         return(dato);        

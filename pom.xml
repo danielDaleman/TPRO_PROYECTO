@@ -7,13 +7,13 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>TPRO_PROYECTO_FINAL</name>
+    <!--<name>TPRO_PROYECTO_FINAL</name>-->
 
     <parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
-		<relativePath/>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.0.RELEASE</version>
+        <relativePath/>
     </parent>
     <dependencies>       
         <dependency>
@@ -26,8 +26,22 @@
 
     <build>
         <plugins>
-    
-  </plugins>
+            <plugin>
+            <!-- Build an executable JAR -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.2</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <classpathPrefix>lib/</classpathPrefix>
+                        <mainClass>main.tpro_proyecto_final.MainApp</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+        </plugins>
     </build>
     
     

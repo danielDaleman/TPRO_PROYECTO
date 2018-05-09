@@ -54,7 +54,8 @@ public class HttpServer implements Runnable {
             if(inputLine.startsWith("GET")){
                 String path = inputLine.split(" ")[1];
                 if(path.equals("/") || path.equals("/index.html")){                                        
-                    File indexFile =new File("src/main/resources/index.html");                    
+                    File indexFile =new File("classes/index.html");                    
+                    //File indexFile =new File("src/main/resources/index.html");                    
                     String output="";
                     String text;                    
                     try {                        
@@ -90,13 +91,11 @@ public class HttpServer implements Runnable {
                         
                         if(bo){
                             res = "SI";
-                        }
-                        
-                        
-                        
+                        }                                                                        
                         outputLine = "HTTP/1.1 200 OK\r\n"
                         + "Content-Type: text/html\r\n\r\n"
-                        + res;
+                        + "Se puede llegar a 'a' apartir de la cadena "+ cadena + "\n" 
+                        + "RESPUESTA: " + res;
 
                         out.println(outputLine);                    
                     }catch(Exception e){
